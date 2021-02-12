@@ -54,13 +54,20 @@ function getTheOldestPerson(
 }
 
 // д) Посчитать сирот (не указаны отец и мать)
-function getOrphansCount(
-    list // список с записями о людях
-) {
-    let count; 
-    // (поместите ваш алгоритм сюда)
-    return count; //число сирот
-}
+
+// это функция, в которой происходит подсчет (если её вызвать)
+function countOrphans(list) { // см. ниже комментарий 1
+    
+    let count = 0;
+    for (let i = 0; i < list.length; i++){ // см. ниже комментарий 2
+        let mother = list[i].mother;
+        let father = list[i].father;
+        if(mother === "" && father === "") {
+            count++}
+    }
+        return count
+    // ИСПРАВИТЬ: функция должна возвращать результат с помощью return;
+};
 
 // е) Найти сколько людей родились до 1941
 function getVeteransCount(
@@ -108,14 +115,39 @@ function getSiblingsCountByID(
     // (поместите ваш алгоритм сюда)
     return count; //число
 }
-
+getPersonWithBiggestChildrenCount (list);
 // л) Найти человека с наибольшим количеством детей
 function getPersonWithBiggestChildrenCount(
     list, // список с записями о людях
 ) {
     let person; 
+    let amount=0;
+    let curramount=0;
+    let k;
+    let y;
+    let currid;
+    let idowner;
+
+    for (k=0;k<list.length;k++) {
+        currid=list[k].ID;
+        curramount=0;
+          for (y=0;y<list.length;y++) {
+            if (currid == list[y].mother || currid == list[y].father){
+              curramount++;
+              if (curramount>amount){
+                amount=curramount;
+                idowner=currid;
+            }
+          }
+        }
+    } 
+    person=list[idowner-1].firstName+" "+list[idowner-1].paternalName+" "+list[idowner-1].lastName
+    //console.log ('Наибольшее кол-во детей = '+amount);
+    //console.log ('Ид человека = '+idowner);
+    //console.log (person);
     // (поместите ваш алгоритм сюда)
     return person; //
+
 }
 
 // м) Проверить, есть ли у человека дядя или тётя
@@ -140,16 +172,6 @@ if(result != "" && gen != 0){
     else console.log("Введенный ID не верен")
 
 }
-<<<<<<< dev
-}
-=======
-// задачка-пример
-function getFullNameByID(list, id){
-
-    return ``// TODO
-}
-
->>>>>>> dev
 //-------- Вспомогательные функции
 
 function getUserInput(){
