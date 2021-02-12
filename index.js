@@ -140,6 +140,16 @@ if(result != "" && gen != 0){
     else console.log("Введенный ID не верен")
 
 }
+<<<<<<< dev
+}
+=======
+// задачка-пример
+function getFullNameByID(list, id){
+
+    return ``// TODO
+}
+
+>>>>>>> dev
 //-------- Вспомогательные функции
 
 function getUserInput(){
