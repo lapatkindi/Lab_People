@@ -19,9 +19,11 @@ let pname;
 let lname;
 function getFullNameByID(list, ID){
     for (let i = 0; People[i].ID == CurrentID; i++){
+      if (People[i.ID == CurrentID]){  
         fname = People[i].firstName
         pname = People[i].parentName
         lname = People[i].lastName
+      }
     }
         
     alert(fname + "  " +  pname + " " + lname);
