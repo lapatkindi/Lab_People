@@ -13,6 +13,19 @@ let results = 0; // результатом будет число
 outputData(results);    
 
 //--- ЗАДАНИЯ
+
+let fname;
+let pname;
+let lname;
+function getFullNameByID(list, ID){
+    for (let i = 0; People[i].ID == CurrentID; i++){
+        fname = People[i].firstName
+        pname = People[i].parentName
+        lname = People[i].lastName
+    }
+        
+    alert(fname + "  " +  pname + " " + lname);
+}
 // а) Для конкретного человека (по ID) узнать текущий возраст (*?)
 function getCurrentAgeByID(
     list, // список с записями о людях
