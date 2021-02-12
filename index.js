@@ -52,13 +52,20 @@ function getTheOldestPerson(
 }
 
 // д) Посчитать сирот (не указаны отец и мать)
-function getOrphansCount(
-    list // список с записями о людях
-) {
-    let count; 
-    // (поместите ваш алгоритм сюда)
-    return count; //число сирот
-}
+
+// это функция, в которой происходит подсчет (если её вызвать)
+function countOrphans(list) { // см. ниже комментарий 1
+    
+    let count = 0;
+    for (let i = 0; i < list.length; i++){ // см. ниже комментарий 2
+        let mother = list[i].mother;
+        let father = list[i].father;
+        if(mother === "" && father === "") {
+            count++}
+    }
+        return count
+    // ИСПРАВИТЬ: функция должна возвращать результат с помощью return;
+};
 
 // е) Найти сколько людей родились до 1941
 function getVeteransCount(
