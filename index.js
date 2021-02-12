@@ -1,4 +1,5 @@
 const helpers = require("./helpers");
+const main = require("./old-from-ID.js")
 //обобщенный алгоритм
 
 //1. Получение данных
@@ -8,6 +9,7 @@ let userInput = getUserInput();
 
 //2. Обработка данных
 let results = 0; // результатом будет число
+oldy_po_id(userInput, list)
 
 //3. Вывод данных
 outputData(results);    
@@ -172,18 +174,24 @@ function a(
     // (поместите ваш алгоритм сюда)
     return result;
 }
+//Extra) Самый древний предок по ID
+function oldy_po_id(userInput, list){
+let AnswerFromFunction = main.MainFunct(userInput, list);
+if (AnswerFromFunction != 'Такого человека не существует'){
+result = AnswerFromFunction.user
+gen = AnswerFromFunction.num}
 
-// задачка-пример
-function getFullNameByID(list, id){
+if(result != "" && gen != 0){
+    console.log("Самый дальний предок в " + JSON.stringify(gen, " ") + " поколении: " + JSON.stringify(result, " ") );
+    }
+    else console.log("Введенный ID не верен")
 
-    return ``// TODO
 }
-
 //-------- Вспомогательные функции
 
 function getUserInput(){
 //в зависимости от условий -- можно prompt, можно брать из аргументов
-return "10.12.1990";
+return 77;
 }
 
 function outputData( results ){
