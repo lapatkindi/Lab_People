@@ -106,14 +106,39 @@ function getSiblingsCountByID(
     // (поместите ваш алгоритм сюда)
     return count; //число
 }
-
+getPersonWithBiggestChildrenCount (list);
 // л) Найти человека с наибольшим количеством детей
 function getPersonWithBiggestChildrenCount(
     list, // список с записями о людях
 ) {
     let person; 
+    let amount=0;
+    let curramount=0;
+    let k;
+    let y;
+    let currid;
+    let idowner;
+
+    for (k=0;k<list.length;k++) {
+        currid=list[k].ID;
+        curramount=0;
+          for (y=0;y<list.length;y++) {
+            if (currid == list[y].mother || currid == list[y].father){
+              curramount++;
+              if (curramount>amount){
+                amount=curramount;
+                idowner=currid;
+            }
+          }
+        }
+    } 
+    person=list[idowner-1].firstName+" "+list[idowner-1].paternalName+" "+list[idowner-1].lastName
+    //console.log ('Наибольшее кол-во детей = '+amount);
+    //console.log ('Ид человека = '+idowner);
+    //console.log (person);
     // (поместите ваш алгоритм сюда)
     return person; //
+
 }
 
 // м) Проверить, есть ли у человека дядя или тётя
