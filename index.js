@@ -126,7 +126,11 @@ function a(
     return result;
 }
 
+// задачка-пример
+function getFullNameByID(list, id){
 
+    return ``// TODO
+}
 
 //-------- Вспомогательные функции
 
