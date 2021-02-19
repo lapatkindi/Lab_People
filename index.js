@@ -33,14 +33,21 @@ function getPersonByName(
 }
 
 // в) Найти всех людей с указанным днем рождения
-function getPersonsByBirthday(
-    list, // список с записями о людях
-    birthday, // пользовательский ввод
-) {
-    let persons = []; 
-    // (поместите ваш алгоритм сюда)
-    return persons; //массив людей, пустой если никого
+const helpers = require("./helpers.js");
+const filename = "./people.json";
+let list = helpers.getDataFromJSONFile(filename);
+
+const birthday = process.argv[2];
+function getPersonsByBirthday(){        
+for(let i = 0; i < list.length; i++){
+    let obj = list[i].birthDate;
+    if(birthday === obj){
+        let a = list[i].firstName + ' ' + list[i].paternalName + ' ' + list[i].lastName;
+        console.log(a);
+    }
+} 
 }
+getPersonsByBirthday; 
 
 // г) Найти самого старого человека
 function getTheOldestPerson(
